@@ -1,0 +1,201 @@
+{
+  "summary": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 0.5714285714285714,
+    "both_rate": 0.5714285714285714,
+    "seconds": 46.6
+  },
+  "rows": [
+    {
+      "question": "平日は何時まで診てもらえますか",
+      "raw": "{\"answer\": \"診療時間は月〜金 9:00〜12:00 と 14:00〜18:00、土曜は 9:00〜13:00 です。日曜・祝日は休診です。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "平日の診療時間は何時から何時までですか",
+      "raw": "{\"answer\": \"診療時間は月〜金 9:00〜12:00 と 14:00〜18:00、土曜は 9:00〜13:00 です。日曜・祝日は休診です。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "クリニックは何時に閉まりますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。受付に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "はじめての受診の申し込み方法は？",
+      "raw": "{\"answer\": \"初診は電話（03-0000-1234）での予約制です。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "初めてかかる場合の予約の取り方を教えてください",
+      "raw": "{\"answer\": \"初診は電話（03-0000-1234）での予約制です。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "初診の予約は電話でできますか",
+      "raw": "{\"answer\": \"初診は電話（03-0000-1234）での予約制です。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "当日持参するものはありますか",
+      "raw": "{\"answer\": \"MRI 検査の当日は、検査の 4 時間前から食事を控えてください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "初診のときに持っていくものは何ですか",
+      "raw": "{\"answer\": \"初診は電話（03-0000-1234）での予約制です。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "保険証以外に必要なものはありますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。受付に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false
+    },
+    {
+      "question": "MRI の前は何時間食事を控えますか",
+      "raw": "{\"answer\": \"MRI 検査の当日は、検査の 4 時間前から食事を控えてください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "MRI を受ける日は食事をとってもいいですか",
+      "raw": "{\"answer\": \"MRI 検査の当日は、検査の 4 時間前から食事を控えてください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "MRI 検査の何時間前から絶食ですか",
+      "raw": "{\"answer\": \"MRI 検査の当日は、検査の 4 時間前から食事を控えてください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "予約を取り消すにはどうすればいいですか",
+      "raw": "{\"answer\": \"予約の変更・キャンセルは、前日の 17:00 までに電話でご連絡ください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "予約日を変えたいときの連絡期限は？",
+      "raw": "{\"answer\": \"予約の変更・キャンセルは、前日の 17:00 までに電話でご連絡ください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "予約した日に行けなくなったらどうすればいいですか",
+      "raw": "{\"answer\": \"予約の変更・キャンセルは、前日の 17:00 までに電話でご連絡ください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false
+    },
+    {
+      "question": "担当医を指名できますか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。受付に確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true
+    },
+    {
+      "question": "MRI 検査の費用はいくらですか",
+      "raw": "{\"answer\": \"MRI 検査の当日は、検査の 4 時間前から食事を控えてください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "MRI の検査時間はどれくらいかかりますか",
+      "raw": "{\"answer\": \"MRI 検査の当日は、検査の 4 時間前から食事を控えてください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "キャンセル料はかかりますか",
+      "raw": "{\"answer\": \"予約の変更・キャンセルは、前日の 17:00 までに電話でご連絡ください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "お薬手帳を忘れたらどうなりますか",
+      "raw": "{\"answer\": \"受診時は保険証（マイナ保険証可）とお薬手帳をお持ちください。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    },
+    {
+      "question": "頭痛がひどいのですが受診したほうがいいですか",
+      "raw": "{\"answer\": \"この FAQ には記載がありません。受診の前の注意ことは、MRI 検査の当日は、検査の 4 時間前から食事を控えてくださいです。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true
+    }
+  ]
+}

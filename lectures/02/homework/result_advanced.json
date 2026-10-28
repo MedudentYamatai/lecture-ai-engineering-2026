@@ -1,0 +1,88 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 5,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 320,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.11.0+cu130"
+  },
+  "method": "LoRA（量子化なし）・用語集 SFT（宿題・発展）",
+  "before": {
+    "label": "before",
+    "n": 35,
+    "format_rate": 0.0,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 108.2,
+    "content_by_kind": {
+      "seen": 0.0,
+      "paraphrase": 0.0,
+      "alias": 0.0,
+      "unknown": 0.0
+    }
+  },
+  "after": {
+    "label": "after",
+    "n": 35,
+    "format_rate": 1.0,
+    "content_rate": 0.5428571428571428,
+    "both_rate": 0.5428571428571428,
+    "seconds": 132.6,
+    "content_by_kind": {
+      "seen": 0.778,
+      "paraphrase": 0.778,
+      "alias": 0.333,
+      "unknown": 0.25
+    }
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "質問": "AIE2026 の第4回では何を学びますか",
+      "用語集にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"第4回では、AIE2026 の第3回の内容を再確認し、最新の技術トレンドや、AI 技術の進化について学びます。\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"第4回の演習は「LLMの振る舞い（プロンプト）を学ぶ」。用語集の回答係として、質問を回してモデルに渡す指示文や出力形式を把握する。回答はモデルの反応を拝見し、納得がいかないときは質問で再度確認できる。\", \"needs_review\": false}"
+    },
+    {
+      "質問": "この講座の受講者は何人ですか",
+      "用語集にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"1,200\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"本講座は、2回に分けて受講できる2周講座の形式です。1回の回で4人の受講者がいます。\", \"needs_review\": false}"
+    },
+    {
+      "質問": "第5回で作る MCP サーバーは何を公開しますか",
+      "用語集にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"MCP サーバーは、MCP 定義ファイル（.mcp.json）を公開します\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"MCPクライアントが望ましくなるよう設計された公開設定。ツール名・引数・戻り値・連携先を定義し、クライアントからJSONで受け取る。公開度が低い設定は「private」と書き、クライアントが選択したら許可モードで、許可が返らない時はエラーで返す。\", \"needs_review\": false}"
+    },
+    {
+      "質問": "「LoRA」とは何ですか？",
+      "用語集にある": true,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"低秩自回帰（Low-Rank Adaptation）\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習する手法。学習するパラメータが少なく、学習結果（更新行列）をメモに残り、後で再利用できる。本講座の第2回演習ではLoRAを扱う。\", \"needs_review\": false}"
+    }
+  ],
+  "executed_training_myself": true
+}

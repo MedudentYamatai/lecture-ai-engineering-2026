@@ -1,0 +1,368 @@
+{
+  "summary": {
+    "label": "before",
+    "n": 35,
+    "format_rate": 0.0,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 108.2,
+    "content_by_kind": {
+      "seen": 0.0,
+      "paraphrase": 0.0,
+      "alias": 0.0,
+      "unknown": 0.0
+    }
+  },
+  "rows": [
+    {
+      "question": "「LoRA」とは何ですか？",
+      "raw": "{\"answer\": \"低秩自回帰（Low-Rank Adaptation）\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "LoRAの意味を教えてください",
+      "raw": "{\"answer\": \"低秩自编码器（Low-Rank Adaptation）\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「Low-Rank Adaptation」って何のことですか？",
+      "raw": "{\"answer\": \"低ランク適応（Low-Rank Adaptation）は、データやモデルの出力を低ランク（低次元）に圧縮し、その圧縮された出力を元のデータやモデルに再構築して、より高い精度を維持する手法です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「QLoRA」とは何ですか？",
+      "raw": "{\"answer\": \"QLoRA (Quantized Large Language Model) は、大規模言語モデル（LLM）をより効率的にトレーニング・評価するための、パラメータをより小さな量子化（quantization）されたバージョンのことです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "QLoRAの意味を教えてください",
+      "raw": "{\"answer\": \"QLoRA (Quantized LoRA) は、大規模言語モデル（LLM）のロジックを、より軽量で高速に学習するための一種の超パラメータ削減技術です。Q（Quantum）は量子化、LoRA（Low-Rank Adaptation）は低秩適応を意味し、この組み合わせにより、モデルの参数を大幅に削減し、学習速度を劇的に向上させる方法です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「Quantized LoRA」って何のことですか？",
+      "raw": "{\"answer\": \"量子化ローラ（Quantized LoRA）は、大規模言語モデル（LLM）のロイヤルタ（ロイヤルタリング）を量子状態に置き換える技術です。従来のローラはパラメータを直接計算し、量子計算機（QPU）で量子状態を生成・操作することで、より高速で高精度なモデルを構築するアプローチです。この技術により、量子計算機がローラタリングの計算を可能にし、モデルの性能を向上させることが可能です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「ハルシネーション」とは何ですか？",
+      "raw": "{\"answer\": \"ハルシネーションとは、電磁波が媒質を通過する際、波長が変化して波数が増加する現象です。これは媒質の性質（介電率や磁導率）によって生じる現象であり、電磁波のエネルギーが媒質に吸収・反射されることで発生します。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "ハルシネーションの意味を教えてください",
+      "raw": "{\"answer\": \"ハルシネーションは、光の波長が媒質の伝播速度に比例して変化し、波長が変化すると波の振幅が変化するという現象を指します。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「幻覚」って何のことですか？",
+      "raw": "{\"answer\": \"幻覚とは、脳や神経系が異常に活動している状態において、現実の認識を歪めて生じる錯覚や錯視のことです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「レート制限」とは何ですか？",
+      "raw": "{\"answer\": \"レート制限とは、特定のサービスやプラットフォームにおいて、ユーザーが特定の時間範囲内でのアクセスを制限する仕組みのことです。例として、SNS のログイン制限や、ゲームのログイン制限などが挙げられます。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "レート制限の意味を教えてください",
+      "raw": "{\"answer\": \"レート制限は、特定のサービスやプラットフォームにおいて、ユーザーの通信速度やデータ利用量を制限する仕組みのことです。例として、YouTube のアップロード制限や、特定の SNS のログイン制限などが挙げられます。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「429エラー」って何のことですか？",
+      "raw": "{\"answer\": \"429 エラーは HTTP 標準で、クライアントがサーバーに対してリクエストを送信する際に、サーバーがリクエストの数を制限して返すエラーです。通常、サーバーが 1000 回までリクエストを許容する設定になっています。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「MCP（Model Context Protocol）」とは何ですか？",
+      "raw": "{\"answer\": \"MCP（Model Context Protocol）は、AI 分野におけるモデルのトレーニングや推理において、モデルの出力を人間が理解しやすくするための「モデルコンテキスト（Model Context）」を定義するプロトコルです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "MCP（Model Context Protocol）の意味を教えてください",
+      "raw": "{\"answer\": \"MCP（Model Context Protocol）は、AI におけるモデルのトレーニングや推理において、モデルの知識や出力をユーザーのテキストやコードで定義し、モデルがそれを理解して出力する仕組みを指します。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「Model Context Protocol」って何のことですか？",
+      "raw": "{\"answer\": \"Model Context Protocol (MCP) は、AI 機器やモデルがユーザーの自然言語で操作する際に、その操作をモデルに伝達するための標準化された通信プロトコルです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「過学習」とは何ですか？",
+      "raw": "{\"answer\": \"過学習とは、学習者が学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避けるために、学習対象のデータに対して過学習を避ける",
+      "format_ok": false,
+      "format_reason": "json_error: JSONDecodeError",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "過学習の意味を教えてください",
+      "raw": "{\"answer\": \"過学習とは、学習者が学習対象のデータに対して学習を繰り返す際に、学習結果がより良いものになる傾向があることです。これは、学習者が学習対象のデータに過度に集中し、学習結果がより良いものになる傾向があることです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「オーバーフィッティング」って何のことですか？",
+      "raw": "{\"answer\": \"オーバーフィッティングとは、ソフトウェアの機能や挙動がユーザーの操作や環境によって大きく変化し、本来の動作を維持できない現象です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「Human-in-the-loop」とは何ですか？",
+      "raw": "{\"answer\": \"人間がシステムに介入して、そのシステムが動作する過程や結果を監視・制御する仕組み\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "Human-in-the-loopの意味を教えてください",
+      "raw": "{\"answer\": \"人間介入のループ（Human-in-the-loop）とは、システムやプロセスにおいて、人間が介入してその結果を決定・制御・監視する仕組みを指します。これは、AI や自動システムが独自に判断するのではなく、人間の判断や意図に基づいて動作を調整・制御するプロセスを意味します。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「HITL」って何のことですか？",
+      "raw": "{\"answer\": \"HITL は、HITL 1999 年（1999 年）の国際会議（HITL 1999）の英語表記の略称です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「宿題の3レベル」とは何ですか？",
+      "raw": "{\"answer\": \"宿題の3レベルは、学習の進捗やレベルを 3 つの段階に分ける方法です。通常は「レベル1（基礎）、レベル2（応用）、レベル3（高度）」と称され、各レベルは学習の難易度や到達目標を明確に定義します。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "宿題の3レベルの意味を教えてください",
+      "raw": "{\"answer\": \"宿題の3レベルは、学習の進捗やレベルの深さを表す指標です。通常、レベル1は基礎知識の確認、レベル2は応用能力の強化、レベル3は問題解決や創造的な思考の訓練となります。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「宿題レベル」って何のことですか？",
+      "raw": "{\"answer\": \"宿題レベルは、学習や作業の質や難易度を表す指標です。通常、1〜5 の段階で分類され、1 は非常に簡単な問題、5 は非常に難しすぎる問題とされています。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「既定モデル」とは何ですか？",
+      "raw": "{\"answer\": \"既定モデルとは、学習プロセスにおいて事前に定義されたモデルのことで、そのモデルの構造やパラメータが学習する対象となります。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "既定モデルの意味を教えてください",
+      "raw": "{\"answer\": \"既定モデルとは、学習プロセスにおいて事前に定義された、特定のデータセットや特徴パターンに基づいて学習されるモデルのことです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「デフォルトモデル」って何のことですか？",
+      "raw": "{\"answer\": \"デフォルトモデルとは、システムやアプリケーションが標準的に動作する、最も一般的または最も適切な入力値・出力値を指す用語です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「RLHF」とは何ですか？",
+      "raw": "{\"answer\": \"RLHF は Reinforcement Learning from Human Feedback (人間からの報酬学習) の略称で、人間の意見や指示に基づいて大規模言語モデルや他の AI を学習させる手法です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「MoE」とは何ですか？",
+      "raw": "{\"answer\": \"MoE (Mixture of Experts) は、大規模言語モデル（LLM）の一種で、複数の専門知識を個別に学習し、その知識を組み合わせることで、より高い精度と効率を実現する技術です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「DPO」とは何ですか？",
+      "raw": "{\"answer\": \"DPO (Deep Preference Optimization) は、Deep Learning の最適化手法の一つで、モデルの出力を人間の基準（Preference）と比較し、最適化を行う手法です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「知識グラフ」とは何ですか？",
+      "raw": "{\"answer\": \"知識グラフは、異なるデータソース（例：テキスト、画像、グラフデータなど）から抽出された情報を相互に接続し、その間の関係性を表現する構造化データ構造です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「フルファインチューニング」とは何ですか？",
+      "raw": "{\"answer\": \"フルファインチューニングは、ソフトウェアやシステムがユーザーの操作に基づいて自動的に最適化されるプロセスです。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「MCPゲートウェイ」とは何ですか？",
+      "raw": "{\"answer\": \"MCPゲートウェイは、MCP（Matterport Control Protocol）通信を介して、複数の Matter 機器をネットワーク上で接続し、制御・監視・管理を行う機器です。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「lora_alpha」とは何ですか？",
+      "raw": "{\"answer\": \"LORA_ALPHA は、LORA 変数で指定されるパラメータです。このパラメータは、モデルの出力をより細かく制御し、特定の領域（例：言語、文脈、タスク）に焦点を当てた、より精細な制御可能なパラメータセットを指します。\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「チャンク分割」とは何ですか？",
+      "raw": "{\"answer\": \"テキストの段落やセクションを指定された長さで切り分ける操作\"}",
+      "format_ok": false,
+      "format_reason": "missing_key",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    }
+  ]
+}
