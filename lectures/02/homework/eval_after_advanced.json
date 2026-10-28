@@ -1,0 +1,368 @@
+{
+  "summary": {
+    "label": "after",
+    "n": 35,
+    "format_rate": 1.0,
+    "content_rate": 0.5428571428571428,
+    "both_rate": 0.5428571428571428,
+    "seconds": 132.6,
+    "content_by_kind": {
+      "seen": 0.778,
+      "paraphrase": 0.778,
+      "alias": 0.333,
+      "unknown": 0.25
+    }
+  },
+  "rows": [
+    {
+      "question": "「LoRA」とは何ですか？",
+      "raw": "{\"answer\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習する手法。学習するパラメータが少なく、学習結果（更新行列）をメモに残り、後で再利用できる。本講座の第2回演習ではLoRAを扱う。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "LoRAの意味を教えてください",
+      "raw": "{\"answer\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習する手法。学習するパラメータが少なく、学習結果（更新行列）を後で再利用できる。本講座の第2回演習ではLoRAを扱う。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「Low-Rank Adaptation」って何のことですか？",
+      "raw": "{\"answer\": \"この用語は用語集に記載がありません。確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「QLoRA」とは何ですか？",
+      "raw": "{\"answer\": \"この用語は用語集に記載がありません。確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "QLoRAの意味を教えてください",
+      "raw": "{\"answer\": \"事前学習済みの重み（encoder）を2つに分けてA（低ランク）とB（高ランク）で割った後、LoRAで高ランクの出力を取得する手法。出力のランクを予測するモデルはLoRAのA/Bを分かち、低ランクの出力を高精度で扱う。2026年9月に公開された基盤モデルはLoRA-Aで取得できる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「Quantized LoRA」って何のことですか？",
+      "raw": "{\"answer\": \"LoRAの重みを少ないビット数（例：4ビット）で表し、メモリ使用量と計算量を減らす技術。低メモリ環境や高速計算を要求しないアプリに使う。精度は少し落ちる（補償）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「ハルシネーション」とは何ですか？",
+      "raw": "{\"answer\": \"LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モデルが知らないこと（最新情報、組織や部門に固有の情報など）を拾い出す能力が、学習データに集中しすぎると増える。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "ハルシネーションの意味を教えてください",
+      "raw": "{\"answer\": \"LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モデルが知らないこと（最新情報、組織や部門に固有の情報など）を拾い出して報告する側力は、エージェントの強み。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「幻覚」って何のことですか？",
+      "raw": "{\"answer\": \"AIが真偽を判断せずに真偽を判定した結果として出る現象。学習データに依存し、データが増えるほど起きやすくなり、気づくまで時間がかかる。2026年10月の回答では男性が女性と数え、明日を恐れる、この3つの判断で結果が変わる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「レート制限」とは何ですか？",
+      "raw": "{\"answer\": \"一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、エージェントは1つの質問で複数回LLMを呼ぶため上限に達しやすい。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "レート制限の意味を教えてください",
+      "raw": "{\"answer\": \"一定時間あたりに呼び出せるリクエスト数やトークン数の上限。超えるとHTTP 429などのエラーが返る。無料枠は特に制限が厳しく、エージェントは1つの質問で複数回LLMを呼ぶため上限に達しやすい。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「429エラー」って何のことですか？",
+      "raw": "{\"answer\": \"クライアントがサーバーに頻繁にrequestsを呼び出すのを検出した時の挙動。サーバーは過剰使用を感知し、再度呼ぶのを待ってから再度呼び出す（レート制限）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「MCP（Model Context Protocol）」とは何ですか？",
+      "raw": "{\"answer\": \"AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する多くのエージェントやエディタ（MCPクライアント）から共通の方法で使える。本講座では用語集の検索をMCPサーバーとして公開したアプリをMCPクライアントから実行して、呼び出したツールをリストで表示させる（App MCP Server）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "MCP（Model Context Protocol）の意味を教えてください",
+      "raw": "{\"answer\": \"AIアプリと外部のツールやデータソースをつなぐためのオープンな標準プロトコル。MCPサーバーとして公開したツールは、対応する多くのエージェントやエディタ（MCPクライアント）から共通の方法で使える。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「Model Context Protocol」って何のことですか？",
+      "raw": "{\"answer\": \"AIE2026のエージェントの振る舞い（tools、messages、context）を互いに表示させるためのオープンな標準プロトコル。各講座で扱うエージェントのモデルは、このプロトコルに従うか、またはそのルールを自分で決める（設定ファイルでルールを指定するか、コマンドラインでツールを呼び出す）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「過学習」とは何ですか？",
+      "raw": "{\"answer\": \"学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "過学習の意味を教えてください",
+      "raw": "{\"answer\": \"学習データにだけ過度に適合し、未知の入力に対する性能が落ちる状態。学習に使わない検証データで性能を測って気づく。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「オーバーフィッティング」って何のことですか？",
+      "raw": "{\"answer\": \"学習データにだけモデルが適応し、実世界との不一致や未知の入力にぶつかるときに起きる。学習に留めるデータセットのサイズと出力データの分布を考慮したプロンプト設計で防げる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「Human-in-the-loop」とは何ですか？",
+      "raw": "{\"answer\": \"エージェントの処理の途中に人の確認や承認を組み込むこと。データの書き込みや送信など、重要動作の後に行う。法的・倫理的な理由がある。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "Human-in-the-loopの意味を教えてください",
+      "raw": "{\"answer\": \"エージェントの処理の途中に人の確認や承認を組み込むこと。データの書き込みや送信など、重要処理の前に使う。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「HITL」って何のことですか？",
+      "raw": "{\"answer\": \"LLMがツールを呼び出すためのフレームワーク。Pydantic AIの huggingface_hub に対応している。APIキーをファイルに書き、読み込むことで秘密を保密できる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「宿題の3レベル」とは何ですか？",
+      "raw": "{\"answer\": \"AIE2026の宿題の構成。基礎知識（第1レベル）、実装とコードレビュー（第2レベル）、課題の設計と提出（第3レベル）。同じレベルに達していないと進めません。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "宿題の3レベルの意味を教えてください",
+      "raw": "{\"answer\": \"AIE2026の宿題の構成。基礎知識（第1回）から、実装から評価までを回す。第2回は実装を回し、第3回は評価と改善を回す。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「宿題レベル」って何のことですか？",
+      "raw": "{\"answer\": \"AIE2026の宿題の難易度スケール。1から9までと数える。基礎から応用までを想定している。同じ宿題をAIE2026のどの講座でも同じレベルで扱っている（講座ごとの演習集や講義の構成に依る）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「既定モデル」とは何ですか？",
+      "raw": "{\"answer\": \"AIE2026の演習と宿題で標準に使うモデルは gemini-3.5-flash-lite。無料のプランで動くので、使うたびに料金が変わらない。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "seen"
+    },
+    {
+      "question": "既定モデルの意味を教えてください",
+      "raw": "{\"answer\": \"AIE2026の演習と宿題で標準に使うモデルは gemini-3.5-flash-lite。無料のプランで動くので、使うたびに料金が変わらない。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "paraphrase"
+    },
+    {
+      "question": "「デフォルトモデル」って何のことですか？",
+      "raw": "{\"answer\": \"AIE2026の演習と宿題で標準に使うモデルは gemini-3.5-flash-lite。無料のプランで動くので、使うたびに料金が変わらない。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": false,
+      "kind": "alias"
+    },
+    {
+      "question": "「RLHF」とは何ですか？",
+      "raw": "{\"answer\": \"プロンプトを良い日本語にするためのループ。モデルをRL（回数を数えて）で学習させるためのシステム（プロンプトタクト）とエージェント（ハルシネーション検出、スコア付け）を組み合わせた学習アプローチ。2026年9月に公開された最新版の用語集では、RLHFが5つに分類されている。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「MoE」とは何ですか？",
+      "raw": "{\"answer\": \"1つの出力をmつの小さなトークンで分ける技術。軽量で価格が安い。1つのパラメータ数は固定され、どのMOEがよいかはデータで判断できる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「DPO」とは何ですか？",
+      "raw": "{\"answer\": \"プロンプトで二つのモデル間の行動を誘う方法。指示で良い行動を望むことで利用可能な学習データを作る。Pydantic AIでは DPOプロンプトは __dpo_prompt(__model, __input, __target_output)__ などで与える。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「知識グラフ」とは何ですか？",
+      "raw": "{\"answer\": \"この用語は用語集に記載がありません。確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「フルファインチューニング」とは何ですか？",
+      "raw": "{\"answer\": \"この用語は用語集に記載がありません。確認が必要です。\", \"needs_review\": true}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": true,
+      "both_ok": true,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「MCPゲートウェイ」とは何ですか？",
+      "raw": "{\"answer\": \"MCPのツールを公開し、クライアントが選択したどのモックを呼び出すかを決める中枢サーバー。Pydantic AIの MCPサーバーがゲートウェイになる。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「lora_alpha」とは何ですか？",
+      "raw": "{\"answer\": \"ルoraの学習率。αが大きいほど表現力を上げるが、学習するステップ数とメモリも増える。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    },
+    {
+      "question": "「チャンク分割」とは何ですか？",
+      "raw": "{\"answer\": \"LLMが一度入力を受ける時の分断。モデルは必ずしも1文字で答えるだけでなく、複数の質問や文章を1回の入力で望ましく作る（例：LLMの質問応答、RAGのツールの名前分け）。\", \"needs_review\": false}",
+      "format_ok": true,
+      "format_reason": "",
+      "content_ok": false,
+      "both_ok": false,
+      "gold_needs_review": true,
+      "kind": "unknown"
+    }
+  ]
+}
