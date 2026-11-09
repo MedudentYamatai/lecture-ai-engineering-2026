@@ -5,10 +5,13 @@
 """
 
 import json
+import random
+from datetime import datetime
 from functools import cache
 from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
+LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
 MAX_RESULTS = 3
 
 
@@ -77,3 +80,49 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+
+def make_quiz(lecture: int) -> str:
+    """指定した回（1始まりの整数）の用語から1つを選び、確認問題と答えを返す。
+
+    「第2回の確認問題を出して」「第3回の復習クイズがほしい」のように、
+    復習用の問題を求められたときに使う。返り値の question を出題し、
+    answer は利用者が答えたあとの答え合わせ（または解説）に使う。
+    """
+    candidates = [e for e in load_glossary() if e["lecture"] == lecture]
+    if not candidates:
+        available = sorted({e["lecture"] for e in load_glossary()})
+        return (
+            f"第{lecture}回の用語は用語集にありません。"
+            f"問題を作れる回: {', '.join(f'第{n}回' for n in available)}"
+        )
+    entry = random.choice(candidates)
+    return json.dumps(
+        {
+            "question": f"「{entry['term']}」の意味は？",
+            "answer": entry["definition"],
+            "lecture": entry["lecture"],
+        },
+        ensure_ascii=False,
+    )
+
+
+def save_learning_log(title: str, content: str) -> str:
+    """学習の記録（学んだこと・つまずいたこと・次にやること など）を learning_log/ に Markdown で保存する。
+
+    「今日の学習を記録して」「この内容をメモとして残して」のように、利用者が
+    記録の保存をはっきり頼んだときだけ使う。title は記録の短い見出し、
+    content は保存する本文（会話の内容を利用者の言葉に沿って要約したもの）。
+    保存の前の確認はプログラムが利用者に直接行うので、会話で「保存してよいか」を
+    聞き返さず、頼まれたらそのまま呼ぶこと。
+    """
+    title = title.strip() or "学習の記録"
+    LOG_DIR.mkdir(exist_ok=True)
+    now = datetime.now()
+    path = LOG_DIR / f"{now:%Y%m%d-%H%M%S}.md"
+    n = 2
+    while path.exists():  # 既存の記録は上書きしない
+        path = LOG_DIR / f"{now:%Y%m%d-%H%M%S}-{n}.md"
+        n += 1
+    path.write_text(f"# {title}\n\n- 保存日時: {now:%Y-%m-%d %H:%M}\n\n{content.strip()}\n", encoding="utf-8")
+    return f"{path.parent.name}/{path.name} に保存しました。"
