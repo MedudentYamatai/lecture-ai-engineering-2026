@@ -22,6 +22,14 @@ RAG_TOP_K = 5
 GRAPH_START_K = 3
 GRAPH_HOPS = 2
 GRAPH_MAX_RESULTS = 10
+# 第5回 宿題（実装）: 検索結果の前後何ページまで本文を付けるか
+NEIGHBOR_WINDOW = 1
+# 第5回 宿題（発展）: ベクトルとキーワードの順位を統合し、上位ページの前後だけを足す
+HYBRID_CANDIDATES = 30  # 統合前に各検索から取る件数
+HYBRID_RRF_K = 60  # Reciprocal Rank Fusion の定数（一般的な既定値）
+HYBRID_TOP_K = 6  # 統合後に採用するページ数
+HYBRID_EXPAND_TOP = 2  # 前後ページを足す対象（統合順位の上位何件か）
+HYBRID_MAX_RESULTS = 8  # 前後ページを含めて返す上限
 EMBEDDING_MODEL = "gemini-embedding-001"
 EMBEDDING_DIMENSIONS = 768
 # 2,048トークンの上限に対し、タスク指定等の分を残す。超過時は切り捨てず停止する。

@@ -175,3 +175,38 @@ def search_graph(query: str) -> str:
         return json.dumps({"error": str(e)}, ensure_ascii=False)
     except APIError as e:
         return json.dumps({"error": api_error_message(e.code)}, ensure_ascii=False)
+
+
+def _search_json(search_function, query: str) -> str:
+    """検索結果をJSONにし、エラーはモデルが読める形で返す。"""
+    from google.genai.errors import APIError
+    import sqlite3
+
+    try:
+        return json.dumps({"results": search_function(query)}, ensure_ascii=False)
+    except (ValueError, OSError, sqlite3.Error) as e:
+        return json.dumps({"error": str(e), "results": []}, ensure_ascii=False)
+    except APIError as e:
+        return json.dumps({"error": api_error_message(e.code), "results": []}, ensure_ascii=False)
+
+
+def search_materials_with_neighbors(query: str) -> str:
+    """第1〜3回の本講義資料を検索し、関連ページとその前後ページの本文・引用情報を返す。
+
+    retrieved_by が neighbor のページは、検索結果の隣にあるだけで根拠とは限らない。
+    queryに調べたい内容を指定する。
+    """
+    from app.retrieval import search_with_neighbors
+
+    return _search_json(search_with_neighbors, query)
+
+
+def search_materials_hybrid(query: str) -> str:
+    """第1〜3回の本講義資料を意味とキーワードの両方で検索し、本文と引用情報を返す。
+
+    retrieved_by が neighbor のページは、上位ページの隣にあるだけで根拠とは限らない。
+    queryには、固有名詞や用語をそのまま含めて指定する。
+    """
+    from app.retrieval import search_hybrid
+
+    return _search_json(search_hybrid, query)
