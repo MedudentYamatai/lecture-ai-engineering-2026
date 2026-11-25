@@ -19,7 +19,13 @@
 
 <!-- 基礎・実装・発展のどれか1つに取り組めば完了です。 -->
 
-- 取り組んだレベル：基礎 / 実装 / 発展
-- やったこと：
+- 取り組んだレベル：基礎 / 実装 / 発展（3 つすべて）
+
+### 基礎
+
+- やったこと：`app/mcp_server.py` の TODO の下に `server.tool()(tools.get_lecture_summary)` の 1 行を書き足した。`git status` で、変更が `app/mcp_server.py` だけであることを確認した（エージェント側の `app/mcp_servers.json` と `app/mcp_agent.py` は変えていない）。
 - 結果：
-- 気づき・疑問：
+  - `--list-tools` に `[glossary_get_lecture_summary]`（引数 `{"lecture": {"title": "Lecture", "type": "integer"}}`）が増えた。
+  - 「第2回では何を学びますか？」の trace：`[tool call]   glossary_get_lecture_summary({'lecture': 2})`。返ってきた第2回の要点（事前学習とファインチューニング、SFT、LoRA/QLoRA、Colab での演習）をもとに回答した。モデル応答 2 回。
+  - `uv run pytest -q`：32 passed
+- 気づき・疑問：エージェントは起動するたびにサーバーへツール一覧を問い合わせるので、サーバー側に 1 行足すだけでエージェントのコードを変えずに使えるようになった。第3回のように関数をエージェントへ直接登録する方法だと、ツールを増やすたびにエージェント側も変える必要があり、ここが MCP で分ける利点だと実感した。
