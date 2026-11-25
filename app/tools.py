@@ -91,12 +91,17 @@ def make_quiz(lecture: int) -> str:
     復習用の問題を求められたときに使う。返り値の question を出題し、
     answer は利用者が答えたあとの答え合わせ（または解説）に使う。
     """
-    candidates = [e for e in load_glossary() if e["lecture"] == lecture]
+    glossary = load_glossary()
+    available = sorted({e["lecture"] for e in glossary})
+    choices = "、".join(f"第{n}回" for n in available)
+    # 範囲外の引数は例外にせず、理由と「選べる値」を文章で返す（そのままモデルに渡り、利用者への説明に使われる）
+    if lecture < 1:
+        return f"第{lecture}回という回はありません（回は1始まりの整数です）。問題を作れる回: {choices}"
+    candidates = [e for e in glossary if e["lecture"] == lecture]
     if not candidates:
-        available = sorted({e["lecture"] for e in load_glossary()})
         return (
-            f"第{lecture}回の用語は用語集にありません。"
-            f"問題を作れる回: {', '.join(f'第{n}回' for n in available)}"
+            f"第{lecture}回の用語は用語集にないため、問題を作れません。"
+            f"問題を作れる回: {choices}。この中から選んでもらってください。"
         )
     entry = random.choice(candidates)
     return json.dumps(
