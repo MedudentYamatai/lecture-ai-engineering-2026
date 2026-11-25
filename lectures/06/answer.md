@@ -51,3 +51,24 @@
   - 例外の種類によって、モデルに届く内容が変わった。MCP の Python SDK（`mcp/server/mcpserver/tools/base.py`）を読むと、`ToolError` は「ツールがわざと出したエラー」としてメッセージをモデルに返す。一方、`ValueError` などそれ以外の例外は「クラッシュ」として扱われ、メッセージはサーバーのログにだけ残り、モデルには定型文しか返さない（内部の情報を外に出さないため）。利用者に伝えたい範囲外の案内は、`return`（または `ToolError`）で返す必要がある。
   - `raise ValueError` 版では、「第99回のクイズを作って」と聞いても、2 回続けてモデルがツールを呼ばずに「第99回はありません」と答えた（モデル応答 1 回）。ツールを呼ぶかどうかはモデルが毎回決めるので、範囲外のテストでは「make_quiz ツールで」と明示する必要があった。
   - `return` で返すと trace の行は `[tool return]` になり、エラーかどうかの区別は文章でしか分からない。ログで失敗を数えたいなら `ToolError`（`is_error` が付く）のほうがよいかもしれない。どちらを標準にするのがよいかは疑問として残った。
+
+### 発展
+
+- やったこと：普段使っている **Claude Code**（v2.1.332）の MCP サーバーの設定方法を公式ドキュメントで調べ、演習の `app/mcp_servers.json` と比べた。あわせて、`claude mcp --help` と、`--mcp-config` で演習の設定ファイルをそのまま読ませる方法で、手元でも確かめた。
+  - 調べた日付：2026-11-25
+  - 参照した公式ドキュメント：https://code.claude.com/docs/en/mcp
+- 結果：
+
+  | 調べること | Claude Code | 演習の `app/mcp_servers.json` |
+  |---|---|---|
+  | 設定を書く場所 | ① コマンドで登録：`claude mcp add` / `claude mcp add-json`（確認は `claude mcp list`、`/mcp`）<br>② ファイル：プロジェクト共有用はリポジトリ直下の `.mcp.json`。自分だけの設定（local / user）は `~/.claude.json` に保存される | `app/` の中の専用ファイル 1 つ。手で編集する |
+  | コマンドで起動する書き方 | `claude mcp add glossary -- uv run python -m app.mcp_server`（`--` のあとが起動コマンド）。JSON では `{"type": "stdio", "command": "uv", "args": [...], "env": {...}}` | `{"command": "uv", "args": [...]}`（`type` なし） |
+  | URL で接続する書き方 | `claude mcp add --transport http aws https://knowledge-mcp.global.api.aws`。JSON では `{"type": "http", "url": "…"}`。認証用のヘッダーは `--header`、OAuth は `/mcp` から。SSE は非推奨 | `{"url": "…"}`（`type` なし） |
+  | 有効になる範囲 | `--scope` で 3 つから選ぶ。`local`（既定。自分だけ・このプロジェクトだけ）、`project`（`.mcp.json` に書かれ、Git で共有される。使う前に承認を求められる）、`user`（自分だけ・すべてのプロジェクト） | このリポジトリの `app.mcp_agent` を動かしたときだけ |
+
+  - 手元での確認：`claude -p --mcp-config app/mcp_servers.json --strict-mcp-config` で演習の設定をそのまま読ませた。`glossary`（3 ツール）と `fetch` は使えたが、**`aws` だけ読み込まれなかった**。写しに `"type": "http"` を足すと、`mcp__aws__aws___search_documentation` など 5 個が増えた。ドキュメントにも「`type` がなく `url` だけの項目は stdio として読まれ、エラーになる」とある。
+  - ツールの名前の付け方：Claude Code は `mcp__glossary__search_glossary`（`mcp__` + サーバー名 + `__` + ツール名）、演習のエージェントは `glossary_search_glossary`（サーバー名 + `_` + ツール名）。サーバー名を前に付けて区別する考え方は同じだが、区切り文字が違う。
+- 気づき・疑問：
+  - `mcpServers` の下にサーバー名をキーとして並べ、`command` / `args` / `url` を書く基本の形は同じで、演習のファイルの大部分はそのまま Claude Code でも使えた。違いは、URL で接続するサーバーに `"type": "http"` が必要なことと、設定の置き場所が範囲（scope）ごとに分かれていることだった。
+  - `project` 範囲の `.mcp.json` は Git で共有されるので、他の人が足したサーバーが自分の環境で起動する可能性がある。Claude Code が使う前に承認を求めるのは、補足の「信頼できるサーバーか確認する」を仕組みにしたものだと理解した。ドキュメントにも「外部の内容を取得するサーバーはプロンプトインジェクションのリスクがある」とあり、fetch のようなサーバーは特に注意が要る。
+  - API キーは `-e KEY=value` や `.mcp.json` の `${VAR}` 展開で渡せる。共有する `.mcp.json` にはキーを直接書かず、環境変数で渡すのがよさそうだと思った。
